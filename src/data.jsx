@@ -1,7 +1,7 @@
 export const fletData = [
   {
     title: "Administracion",
-    image: "/img-admin.webp",
+    image: "./img-admin.webp",
     description:
       "Brindamos soporte de administración a nuestros clientes facilitando la visualización de nuestro margen productivo.",
     moreInfo: "Aprender más...",
@@ -27,7 +27,7 @@ export const fletHeroData = [
     title: "Nos adaptamos a tus necesidades",
     description:
       "Queremos ofrecer una gran gama de de servicios, nos adaptamos a cualquier tipo de motor sin afectar nuestro rendimiento productivo para garantizar un servicio de calidad y con un margen de costos competitivos en el mercado",
-    image: "/flet-need.jpg",
+    image: "./flet-need.jpg",
     imageFirst: false,
     buttons: [
       {
@@ -44,7 +44,7 @@ export const fletHeroData = [
     title: "Sin preocupaciones",
     description:
       "A diferencia de otras empresas, contamos con procesos eficientes, lo cual nos permite ofrecerte una opción segura sin comprometer tu tiempo y tu presupuesto.",
-    image: "/flet-wt-warnings.webp",
+    image: "./flet-wt-warnings.webp",
     imageFirst: false,
     buttons: [
       {
@@ -60,7 +60,7 @@ export const fletHeroData = [
   {
     title: "Contamos con el respaldo de empresas reconocidas",
     description: "Nuestra calidad en el servicio nos distingue, estamos respaldados con empresas",
-    image: "/flet-eng.png",
+    image: "./flet-eng.png",
     imageFirst: true,
     buttons: [
         {
