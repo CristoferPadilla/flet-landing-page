@@ -1,6 +1,6 @@
-import { fletHeroData } from '../data';
+import {Link} from 'react-router-dom';
 
-export function FletHero({ title, description, image, buttons, imageFirst }) {
+export function FletHero({ title, description, image, buttons, imageFirst, link }) {
     return (
         <div className="relative flex flex-col lg:flex-row items-center justify-center px-6 py-12 lg:py-20 m-10">
             {imageFirst && (
@@ -21,16 +21,18 @@ export function FletHero({ title, description, image, buttons, imageFirst }) {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                     {buttons.map((button, index) => (
+                        <Link to={link}>
                         <button
                             key={index}
                             className={`${
                                 button.type === 'primary'
-                                    ? 'inline-flex shadow-md border-0 bg-white p-1.5 mr-2 focus:outline-none hover:bg-black hover:text-white cursor-pointer rounded-4xl text-sm'
+                                    ? 'inline-flex shadow-lg shadow-gray-500/50 bg-white p-1.5 mr-2 focus:outline-none hover:bg-black hover:text-white cursor-pointer rounded-4xl text-sm'
                                     : 'inline-flex text-black border-1 bg-white p-1.5 mr-2 focus:outline-none hover:bg-black hover:text-white cursor-pointer rounded-4xl text-sm'
                             } font-medium px-6 py-3 rounded`}
                         >
                             {button.text}
                         </button>
+                        </Link>
                     ))}
                 </div>
             </div>
@@ -43,23 +45,6 @@ export function FletHero({ title, description, image, buttons, imageFirst }) {
                     />
                 </div>
             )}
-        </div>
-    );
-}
-
-export function FletHeros() {
-    return (
-        <div>
-            {fletHeroData.map((hero, index) => (
-                <FletHero
-                    key={index}
-                    title={hero.title}
-                    description={hero.description}
-                    image={hero.image}
-                    buttons={hero.buttons}
-                    imageFirst={hero.imageFirst} 
-                />
-            ))}
         </div>
     );
 }

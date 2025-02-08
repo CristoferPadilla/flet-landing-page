@@ -1,10 +1,15 @@
 import { React } from "react";
 import { FletHeader } from "../components/FletHeader";
 import { FletFooter } from "../components/FletFooter";
-import { FletCards } from "../components/FletCards";
-import { FletHeros } from "../components/FletHero";
+import { FletCard } from "../components/FletCards";
+import { fletData, fletHeroData } from "../data";
+import { FletHero } from "../components/FletHero";
+import { Link } from 'react-router-dom';
 
 export default function HomePage() {
+
+
+
   return (
     <section className="text-gray-600 body-font min-h-screen flex flex-col bg-white-200"> 
       <FletHeader />
@@ -19,11 +24,13 @@ export default function HomePage() {
               para transportar lo que necesites.
             </p>
             <div className="flex justify-center mt-6 flex-wrap">
-              <button className="inline-flex shadow-md border-0 bg-white p-1.5 mr-2 mb-2 focus:outline-none hover:bg-black hover:text-white cursor-pointer rounded-4xl text-sm">
+              <button className="inline-flex shadow-lg shadow-gray-500/50 border-0 bg-white p-1.5 mr-2 mb-2 focus:outline-none hover:bg-black hover:text-white cursor-pointer rounded-4xl text-sm">
                 Inicio de sesión
               </button>
               <button className="inline-flex text-black border-1 bg-white p-1.5 mr-2 mb-2 focus:outline-none hover:bg-black hover:text-white cursor-pointer rounded-4xl text-sm">
-                Conócenos
+               <Link to='/us' >
+               Conócenos
+               </Link>
               </button>
             </div>
             <div className="flex justify-center mt-6">
@@ -36,10 +43,32 @@ export default function HomePage() {
         <h1 className="sm:text-2xl text-3xl font-medium title-font mb-2 text-black">
           Nos respaldan años de experiencia
         </h1>
-        <FletCards />
+       <div className="flex flex-wrap justify-center gap-4">
+                   {fletData.map((item, index) => (
+                       <FletCard
+                           key={index}
+                           image={item.image}
+                           title={item.title}
+                           description={item.description}
+                           moreInfo={item.moreInfo}
+                       />
+                   ))}
+               </div>
       </article>
       <section className="container mx-auto flex flex-wrap p-5 flex-col items-center flex-grow">
-        <FletHeros />
+          <div>
+                    {fletHeroData.map((hero, index) => (
+                        <FletHero
+                            key={index}
+                            title={hero.title}
+                            description={hero.description}
+                            image={hero.image}
+                            buttons={hero.buttons}
+                            imageFirst={hero.imageFirst} 
+                            link={hero.link}
+                        />
+                    ))}
+                </div>
       </section>
       <FletFooter />
     </section>

@@ -1,9 +1,9 @@
 import React from 'react';
-import { fletData } from '../data';
+import { Link } from 'react-router-dom';
 
 export function FletCard({ image, title, description, moreInfo }) {
     return (
-        <div className="bg-white bg-gray-500 shadow-lg shadow-gray-500/50 rounded-lg p-6 w-72 ">
+        <div className="bg-white shadow-lg shadow-gray-500/50 rounded-lg p-6 w-72 ">
             <div className="flex  mb-4">
                 <img src={image} alt={title} className="h-20" />
             </div>
@@ -12,24 +12,10 @@ export function FletCard({ image, title, description, moreInfo }) {
                 {description}
             </p>
             <div className="text-start">
-                <a href="#" className="text-gray-800 text-sm font-medium hover:underline">{moreInfo}</a>
+              <Link to= '/service' className="text-blue-500 hover:text-blue-700 text-sm">{moreInfo}</Link>
             </div>
         </div>
     );
 }
 
-export function FletCards() {
-    return (
-        <div className="flex flex-wrap justify-center gap-4">
-            {fletData.map((item, index) => (
-                <FletCard
-                    key={index}
-                    image={item.image}
-                    title={item.title}
-                    description={item.description}
-                    moreInfo={item.moreInfo}
-                />
-            ))}
-        </div>
-    );
-}
+
